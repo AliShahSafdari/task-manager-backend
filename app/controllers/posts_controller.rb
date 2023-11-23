@@ -4,7 +4,6 @@ class PostsController < ApplicationController
   # GET /posts
   def index
     @posts = Post.all
-
     render json: @posts
   end
 
@@ -16,7 +15,6 @@ class PostsController < ApplicationController
   # POST /posts
   def create
     @post = Post.new(post_params)
-
     if @post.save
       render json: @post, status: :created, location: @post
     else
